@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{a56a99a1-5445-48b8-beb2-155a7aaff424}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{3b1688fe-2a76-4013-8ffe-67cc1a87a0ad}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{be876912-a107-463c-82cc-e2892255888c}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
+    </Filter>
+    <Filter Include="include\AngryBird">
+      <UniqueIdentifier>{3fff4b43-bf8e-4e8c-87a1-881f67883122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\AngryBird">
+      <UniqueIdentifier>{3765b06b-ab31-4f33-b4e5-05ab8484c193}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Automobile">
+      <UniqueIdentifier>{913c76e7-abee-417b-b18f-45403538dd53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Automobile">
+      <UniqueIdentifier>{2e97dd27-eb8d-439c-bd92-6d67dd2df9a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\CutTheRope">
+      <UniqueIdentifier>{79dde217-fbb4-4289-b13c-eeff533c5744}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\CutTheRope">
+      <UniqueIdentifier>{e0a6d570-5e3a-4fe0-979d-13e7862ef754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\PhysicsWorld">
+      <UniqueIdentifier>{59a5d2d6-b9f2-4b43-ab31-ee611a947d7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\PhysicsWorld">
+      <UniqueIdentifier>{db041925-8630-4374-afde-f6d3b8392a38}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\graduation.ico">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\CloseSelected.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\CloseNormal.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\HelloWorld.png">
+      <Filter>resource</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="graduation.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GLES-Render.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="AngryBirdScene.h">
+      <Filter>include\AngryBird</Filter>
+    </ClInclude>
+    <ClInclude Include="BirdSprite.h">
+      <Filter>include\AngryBird</Filter>
+    </ClInclude>
+    <ClInclude Include="SlingSprite.h">
+      <Filter>include\AngryBird</Filter>
+    </ClInclude>
+    <ClInclude Include="AutomobileScene.h">
+      <Filter>include\Automobile</Filter>
+    </ClInclude>
+    <ClInclude Include="CutTheRope.h">
+      <Filter>include\CutTheRope</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyUserData.h">
+      <Filter>include\PhysicsWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics.h">
+      <Filter>include\PhysicsWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsBody.h">
+      <Filter>include\PhysicsWorld</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GLES-Render.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="AngryBirdScene.cpp">
+      <Filter>source\AngryBird</Filter>
+    </ClCompile>
+    <ClCompile Include="BirdSprite.cpp">
+      <Filter>source\AngryBird</Filter>
+    </ClCompile>
+    <ClCompile Include="SlingSprite.cpp">
+      <Filter>source\AngryBird</Filter>
+    </ClCompile>
+    <ClCompile Include="AutomobileScene.cpp">
+      <Filter>source\Automobile</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyUserData.cpp">
+      <Filter>source\PhysicsWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="CutTheRope.cpp">
+      <Filter>source\CutTheRope</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics.cpp">
+      <Filter>source\PhysicsWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsBody.cpp">
+      <Filter>source\PhysicsWorld</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
