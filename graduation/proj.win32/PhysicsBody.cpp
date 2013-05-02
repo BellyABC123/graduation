@@ -31,8 +31,8 @@
 
 	void PhysicsBody::resetAllShape()
 	{
-		//chainShape		= NULL;
-		//circleShape		= NULL;
+		//chainShape	= NULL;
+		//circleShape	= NULL;
 		//edgeShape		= NULL;
 		//polygonShape	= NULL;
 		if(NULL != chainShape)
