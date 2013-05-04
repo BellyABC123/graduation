@@ -7,6 +7,7 @@
 #include "AngryBirdScene.h"
 #include "AutomobileScene.h"
 #include "CutTheRope.h"
+#include "PulleyScene.h"
 
 using namespace CocosDenshion;
 
@@ -37,7 +38,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     //CCScene *pScene = HelloWorld::scene();
 	//CCScene* pScene = AngryBirdScene::scene();
 	//CCScene* pScene = AutomobileScene::scene();
-	CCScene* pScene = CutTheRopeScene::scene();
+	//CCScene* pScene = CutTheRopeScene::scene();
+	CCScene* pScene = PulleyScene::scene();
 
     // run
     pDirector->runWithScene(pScene);

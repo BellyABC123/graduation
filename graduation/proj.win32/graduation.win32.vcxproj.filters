@@ -37,6 +37,12 @@
     <Filter Include="source\PhysicsWorld">
       <UniqueIdentifier>{db041925-8630-4374-afde-f6d3b8392a38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\PulleyJoint">
+      <UniqueIdentifier>{b03d004a-f446-4f38-9ac4-5168289da338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\PulleyJoint">
+      <UniqueIdentifier>{a54dc218-acc5-4987-a849-c38c4b72ec74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\graduation.ico">
@@ -91,11 +97,14 @@
     <ClInclude Include="BodyUserData.h">
       <Filter>include\PhysicsWorld</Filter>
     </ClInclude>
+    <ClInclude Include="PhysicsBody.h">
+      <Filter>include\PhysicsWorld</Filter>
+    </ClInclude>
     <ClInclude Include="Physics.h">
       <Filter>include\PhysicsWorld</Filter>
     </ClInclude>
-    <ClInclude Include="PhysicsBody.h">
-      <Filter>include\PhysicsWorld</Filter>
+    <ClInclude Include="PulleyScene.h">
+      <Filter>include\PulleyJoint</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="PhysicsBody.cpp">
       <Filter>source\PhysicsWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="PulleyScene.cpp">
+      <Filter>source\PulleyJoint</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

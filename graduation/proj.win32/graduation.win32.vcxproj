@@ -138,6 +138,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="PhysicsBody.h" />
+    <ClInclude Include="PulleyScene.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SlingSprite.h" />
   </ItemGroup>
@@ -153,6 +154,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Physics.cpp" />
     <ClCompile Include="PhysicsBody.cpp" />
+    <ClCompile Include="PulleyScene.cpp" />
     <ClCompile Include="SlingSprite.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
