@@ -28,19 +28,22 @@ bool CutTheRopeScene::init()
 	bool bRet = false;
 	do 
 	{
+		// Initiate CCLayer
 		CC_BREAK_IF(! CCLayer::init());
 
+		// Initiate Physics
 		physics = Physics::create();
 		if(NULL == physics) return false;
 
+		b2Body* brick1 = physics->createBrick(100,100,100,100,"brick1");
+		b2Body* brick2 = physics->createBrick(300,100,100,100,"brick2");
+		physics->createRope(brick1, brick2, 200 );
+
 		schedule(schedule_selector(CutTheRopeScene::updateWorld), physics->getUpdateTime());
 
-		bRet = true;
-
-		//isTouchEnabled();
 		setTouchEnabled(true);
-		cout<<"isTouchEnable(): "<<isTouchEnabled()<<endl;
 
+		bRet = true;
 	} while (0);
 
 	return bRet;

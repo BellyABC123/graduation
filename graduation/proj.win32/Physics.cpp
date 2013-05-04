@@ -22,11 +22,8 @@ bool Physics::init()
 	// Static Platform
 	createStaticBrick(400,-1,800,6,"platform");
 
-	b2Body* brick1 = createBrick(100,100,100,100,"brick1");
-	b2Body* brick2 = createBrick(300,100,100,100,"brick2");
 
-	PhysicsBody* physicsBody = new PhysicsBody(world);
-
+	//PhysicsBody* physicsBody = new PhysicsBody(world);
 	//physicsBody
 	//					->setBodyPosition(b2Vec2(400 * meterPerPixel, 300 * meterPerPixel))
 	//					->setBodyType(b2BodyType::b2_dynamicBody)
@@ -36,8 +33,6 @@ bool Physics::init()
 	//					->setBodyPosition(b2Vec2(100*meterPerPixel, 100*meterPerPixel))
 	//					->setPolygonShapeASBox(50*meterPerPixel, 50*meterPerPixel)
 	//					->createFixture();
-
-
 
 
 	//b2DistanceJointDef distanceJointDef;
@@ -51,7 +46,7 @@ bool Physics::init()
 
 	//world->CreateJoint(&distanceJointDef);
 
-	createRope(brick1, brick2, 200 );
+
 	//b2RevoluteJointDef revoluteJointDef;
 	//revoluteJointDef.Initialize(brick1, brick2 , brick1->GetWorldCenter());
 	//world->CreateJoint(&revoluteJointDef);
@@ -201,15 +196,6 @@ b2Body* Physics::createIdol(int x, int y,char* name)
 
 	return body;
 }
-
-//void PhysicsWorld::draw()
-//{
-//	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
-//	kmGLPushMatrix();
-//	world->DrawDebugData();
-//	kmGLPopMatrix();
-//	CHECK_GL_ERROR_DEBUG();
-//}
 
 class GetClickFixtureCallback :public b2QueryCallback
 {

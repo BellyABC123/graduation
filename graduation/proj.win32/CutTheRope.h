@@ -17,11 +17,9 @@ public:
 	void onEnter();
 
 public:
-	virtual bool 	ccTouchBegan (CCTouch *pTouch, CCEvent *pEvent);
+	virtual bool ccTouchBegan (CCTouch *pTouch, CCEvent *pEvent);
 	virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
 	virtual void ccTouchEnded (CCTouch *pTouch, CCEvent *pEvent);
-	
-
 
 private:
 	Physics* physics;
