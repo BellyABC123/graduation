@@ -31,6 +31,9 @@
     <Filter Include="include\GearJointScene">
       <UniqueIdentifier>{37d3736f-672a-4c12-881f-f05290a6bccd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\OneSidedPlatform">
+      <UniqueIdentifier>{8481b28d-9ec4-4cc3-8e7f-4cea99c940f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\graduation.ico">
@@ -97,6 +100,12 @@
     <ClInclude Include="GearScene.h">
       <Filter>include\GearJointScene</Filter>
     </ClInclude>
+    <ClInclude Include="CustomContactListener.h">
+      <Filter>include\PhysicsWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="OneSidedPlatformScene.h">
+      <Filter>include\OneSidedPlatform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -140,6 +149,12 @@
     </ClCompile>
     <ClCompile Include="SlingSprite.cpp">
       <Filter>include\AngryBird</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomeContactListener.cpp">
+      <Filter>include\PhysicsWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="OneSidedPlatformScene.cpp">
+      <Filter>include\OneSidedPlatform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
