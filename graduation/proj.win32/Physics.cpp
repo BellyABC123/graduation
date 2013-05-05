@@ -1,7 +1,4 @@
-//void initBox2D();
-//void updateWorld(float deltaTime);
-//void draw();
-//
+
 #include "Physics.h"
 #include "BodyUserData.h"
 #include "GLES-Render.h"
@@ -14,7 +11,8 @@ bool Physics::init()
 	world = new b2World(gravity);
 	if(NULL == world)	return false;
 
-	world->SetAllowSleeping(false);
+	world->SetContactListener(&customContactListener);
+	world->SetAllowSleeping(true);
 
 	b2BodyDef bodyDef;
 	backgroundBody = world->CreateBody(&bodyDef);
@@ -413,3 +411,12 @@ void Physics::createRope(b2Body* bodyA, b2Body* bodyB,int length)
 	cout<<"Rope Length: "<<ropeJointDef.maxLength<<endl;
 	world->CreateJoint(&ropeJointDef);
 }
+
+b2Body*	Physics::createOneWayPlatform(int x, int y, int width, int height, char* name)
+{
+	b2Body* body = createStaticBrick(x,y,width,height,name);
+	customContactListener.setOneSidedPlatformEanble();
+	customContactListener.addOneSidedPlatform(body);
+	return NULL;
+}
+

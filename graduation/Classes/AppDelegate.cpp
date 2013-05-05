@@ -9,6 +9,7 @@
 #include "CutTheRope.h"
 #include "PulleyScene.h"
 #include "GearScene.h"
+#include "OneSidedPlatformScene.h"
 
 using namespace CocosDenshion;
 
@@ -40,8 +41,9 @@ bool AppDelegate::applicationDidFinishLaunching()
 	//CCScene* pScene = AngryBirdScene::scene();
 	//CCScene* pScene = AutomobileScene::scene();
 	//CCScene* pScene = CutTheRopeScene::scene();
-	CCScene* pScene = PulleyScene::scene();
+	//CCScene* pScene = PulleyScene::scene();
 	//CCScene* pScene = GearScene::scene();
+	CCScene* pScene = OneSidedPlatformScene::scene();
 
     // run
     pDirector->runWithScene(pScene);
