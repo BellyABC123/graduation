@@ -16,29 +16,17 @@
     <Filter Include="include\AngryBird">
       <UniqueIdentifier>{3fff4b43-bf8e-4e8c-87a1-881f67883122}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\AngryBird">
-      <UniqueIdentifier>{3765b06b-ab31-4f33-b4e5-05ab8484c193}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\Automobile">
       <UniqueIdentifier>{913c76e7-abee-417b-b18f-45403538dd53}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\CutTheRope">
       <UniqueIdentifier>{79dde217-fbb4-4289-b13c-eeff533c5744}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\CutTheRope">
-      <UniqueIdentifier>{e0a6d570-5e3a-4fe0-979d-13e7862ef754}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\PhysicsWorld">
       <UniqueIdentifier>{59a5d2d6-b9f2-4b43-ab31-ee611a947d7a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\PhysicsWorld">
-      <UniqueIdentifier>{db041925-8630-4374-afde-f6d3b8392a38}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\PulleyJoint">
       <UniqueIdentifier>{b03d004a-f446-4f38-9ac4-5168289da338}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="source\PulleyJoint">
-      <UniqueIdentifier>{a54dc218-acc5-4987-a849-c38c4b72ec74}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\GearJointScene">
       <UniqueIdentifier>{37d3736f-672a-4c12-881f-f05290a6bccd}</UniqueIdentifier>
@@ -123,35 +111,35 @@
     <ClCompile Include="..\Classes\GLES-Render.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="AngryBirdScene.cpp">
-      <Filter>source\AngryBird</Filter>
-    </ClCompile>
-    <ClCompile Include="BirdSprite.cpp">
-      <Filter>source\AngryBird</Filter>
-    </ClCompile>
-    <ClCompile Include="SlingSprite.cpp">
-      <Filter>source\AngryBird</Filter>
-    </ClCompile>
-    <ClCompile Include="BodyUserData.cpp">
-      <Filter>source\PhysicsWorld</Filter>
-    </ClCompile>
-    <ClCompile Include="CutTheRope.cpp">
-      <Filter>source\CutTheRope</Filter>
-    </ClCompile>
-    <ClCompile Include="Physics.cpp">
-      <Filter>source\PhysicsWorld</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicsBody.cpp">
-      <Filter>source\PhysicsWorld</Filter>
-    </ClCompile>
-    <ClCompile Include="PulleyScene.cpp">
-      <Filter>source\PulleyJoint</Filter>
-    </ClCompile>
     <ClCompile Include="GearScene.cpp">
       <Filter>include\GearJointScene</Filter>
     </ClCompile>
     <ClCompile Include="AutomobileScene.cpp">
       <Filter>include\Automobile</Filter>
+    </ClCompile>
+    <ClCompile Include="PulleyScene.cpp">
+      <Filter>include\PulleyJoint</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyUserData.cpp">
+      <Filter>include\PhysicsWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics.cpp">
+      <Filter>include\PhysicsWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsBody.cpp">
+      <Filter>include\PhysicsWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="CutTheRope.cpp">
+      <Filter>include\CutTheRope</Filter>
+    </ClCompile>
+    <ClCompile Include="AngryBirdScene.cpp">
+      <Filter>include\AngryBird</Filter>
+    </ClCompile>
+    <ClCompile Include="BirdSprite.cpp">
+      <Filter>include\AngryBird</Filter>
+    </ClCompile>
+    <ClCompile Include="SlingSprite.cpp">
+      <Filter>include\AngryBird</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
