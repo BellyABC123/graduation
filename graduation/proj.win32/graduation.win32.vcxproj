@@ -135,6 +135,7 @@
     <ClInclude Include="BirdSprite.h" />
     <ClInclude Include="BodyUserData.h" />
     <ClInclude Include="CutTheRope.h" />
+    <ClInclude Include="GearScene.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="PhysicsBody.h" />
@@ -151,6 +152,7 @@
     <ClCompile Include="BirdSprite.cpp" />
     <ClCompile Include="BodyUserData.cpp" />
     <ClCompile Include="CutTheRope.cpp" />
+    <ClCompile Include="GearScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Physics.cpp" />
     <ClCompile Include="PhysicsBody.cpp" />

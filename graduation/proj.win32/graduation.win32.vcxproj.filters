@@ -22,9 +22,6 @@
     <Filter Include="include\Automobile">
       <UniqueIdentifier>{913c76e7-abee-417b-b18f-45403538dd53}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\Automobile">
-      <UniqueIdentifier>{2e97dd27-eb8d-439c-bd92-6d67dd2df9a1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\CutTheRope">
       <UniqueIdentifier>{79dde217-fbb4-4289-b13c-eeff533c5744}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,9 @@
     </Filter>
     <Filter Include="source\PulleyJoint">
       <UniqueIdentifier>{a54dc218-acc5-4987-a849-c38c4b72ec74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\GearJointScene">
+      <UniqueIdentifier>{37d3736f-672a-4c12-881f-f05290a6bccd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +106,9 @@
     <ClInclude Include="PulleyScene.h">
       <Filter>include\PulleyJoint</Filter>
     </ClInclude>
+    <ClInclude Include="GearScene.h">
+      <Filter>include\GearJointScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -129,9 +132,6 @@
     <ClCompile Include="SlingSprite.cpp">
       <Filter>source\AngryBird</Filter>
     </ClCompile>
-    <ClCompile Include="AutomobileScene.cpp">
-      <Filter>source\Automobile</Filter>
-    </ClCompile>
     <ClCompile Include="BodyUserData.cpp">
       <Filter>source\PhysicsWorld</Filter>
     </ClCompile>
@@ -146,6 +146,12 @@
     </ClCompile>
     <ClCompile Include="PulleyScene.cpp">
       <Filter>source\PulleyJoint</Filter>
+    </ClCompile>
+    <ClCompile Include="GearScene.cpp">
+      <Filter>include\GearJointScene</Filter>
+    </ClCompile>
+    <ClCompile Include="AutomobileScene.cpp">
+      <Filter>include\Automobile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
