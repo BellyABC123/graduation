@@ -40,8 +40,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 	//CCScene* pScene = AngryBirdScene::scene();
 	//CCScene* pScene = AutomobileScene::scene();
 	//CCScene* pScene = CutTheRopeScene::scene();
-	//CCScene* pScene = PulleyScene::scene();
-	CCScene* pScene = GearScene::scene();
+	CCScene* pScene = PulleyScene::scene();
+	//CCScene* pScene = GearScene::scene();
 
     // run
     pDirector->runWithScene(pScene);

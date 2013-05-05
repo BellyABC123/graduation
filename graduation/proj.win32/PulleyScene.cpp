@@ -23,6 +23,8 @@ CCScene* PulleyScene::scene()
 	return scene;
 }
 
+
+
 bool PulleyScene::init()
 {
 	bool bRet = false;
@@ -35,9 +37,8 @@ bool PulleyScene::init()
 		physics = Physics::create();
 		if(NULL == physics) return false;
 
+		createMap();
 		schedule(schedule_selector(PulleyScene::updateWorld), physics->getUpdateTime());
-
-		physics->createBrick(400,300,50,50,"brick");
 
 		setTouchEnabled(true);
 
@@ -45,6 +46,27 @@ bool PulleyScene::init()
 	} while (0);
 
 	return bRet;
+}
+
+void PulleyScene::createMap()
+{
+	//physics->createBrick(400,300,50,50,"brick");
+
+	b2Body* body1 = physics->createCircle(300,200,25,"body1");
+	b2Body* body2 = physics->createBrick(400,200,50,50,"body2");
+
+	b2PulleyJointDef pulleyJointDef;
+	pulleyJointDef.bodyA = body1;
+	pulleyJointDef.bodyB = body2;
+	pulleyJointDef.localAnchorA = b2Vec2(0,0);
+	pulleyJointDef.localAnchorB = b2Vec2(0,0);
+	pulleyJointDef.lengthA = 200 * physics->getMeterPerPixel();
+	pulleyJointDef.lengthB = 200 * physics->getMeterPerPixel();
+	pulleyJointDef.groundAnchorA = b2Vec2(300 * physics->getMeterPerPixel(),400 * physics->getMeterPerPixel());
+	pulleyJointDef.groundAnchorB = b2Vec2(400 * physics->getMeterPerPixel(),400 * physics->getMeterPerPixel());
+	pulleyJointDef.ratio = 1;
+
+	physics->getWorld()->CreateJoint(&pulleyJointDef);
 }
 
 void PulleyScene::updateWorld(float deltaTime)
