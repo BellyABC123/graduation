@@ -34,6 +34,9 @@
     <Filter Include="include\OneSidedPlatform">
       <UniqueIdentifier>{8481b28d-9ec4-4cc3-8e7f-4cea99c940f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\BuoyancyScene">
+      <UniqueIdentifier>{f3a6f2cf-d9d8-44d2-8fe2-7398d73872df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\graduation.ico">
@@ -106,6 +109,9 @@
     <ClInclude Include="OneSidedPlatformScene.h">
       <Filter>include\OneSidedPlatform</Filter>
     </ClInclude>
+    <ClInclude Include="BuoyancyScene.h">
+      <Filter>include\BuoyancyScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -155,6 +161,9 @@
     </ClCompile>
     <ClCompile Include="OneSidedPlatformScene.cpp">
       <Filter>include\OneSidedPlatform</Filter>
+    </ClCompile>
+    <ClCompile Include="BuoyancyScene.cpp">
+      <Filter>include\BuoyancyScene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

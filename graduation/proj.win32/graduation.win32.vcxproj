@@ -134,6 +134,7 @@
     <ClInclude Include="AutomobileScene.h" />
     <ClInclude Include="BirdSprite.h" />
     <ClInclude Include="BodyUserData.h" />
+    <ClInclude Include="BuoyancyScene.h" />
     <ClInclude Include="CustomContactListener.h" />
     <ClInclude Include="CutTheRope.h" />
     <ClInclude Include="GearScene.h" />
@@ -153,6 +154,7 @@
     <ClCompile Include="AutomobileScene.cpp" />
     <ClCompile Include="BirdSprite.cpp" />
     <ClCompile Include="BodyUserData.cpp" />
+    <ClCompile Include="BuoyancyScene.cpp" />
     <ClCompile Include="CustomeContactListener.cpp" />
     <ClCompile Include="CutTheRope.cpp" />
     <ClCompile Include="GearScene.cpp" />
