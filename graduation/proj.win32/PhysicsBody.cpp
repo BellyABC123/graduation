@@ -14,6 +14,7 @@
 		circleShape		= NULL;
 		edgeShape		= NULL;
 		polygonShape	= NULL;
+		_setFixtureSensorFlag = false;
 	}
 
 	bool PhysicsBody::isBodyExistence(char* functionName)
@@ -61,6 +62,8 @@
 			delete fixtureDef;
 			fixtureDef = NULL;
 		}
+
+		_setFixtureSensorFlag = false;
 	}
 
 	void PhysicsBody::resetBody()
@@ -122,6 +125,13 @@
 	}
 
 	// 操作 Fixture
+
+	
+	PhysicsBody* PhysicsBody::setFixtureSensor(bool sensor)
+	{
+		_setFixtureSensorFlag = true;
+		return this;
+	}
 	PhysicsBody* PhysicsBody::setFixtureDensity(float density)
 	{
 		if(NULL == fixtureDef)
@@ -224,7 +234,12 @@
 			fixtureDef->shape = new b2PolygonShape();
 		}
 
-		body->CreateFixture(fixtureDef);
+		b2Fixture* fixture = body->CreateFixture(fixtureDef);
+
+		if(_setFixtureSensorFlag)
+		{
+			fixture->SetSensor(true);
+		}
 
 		// 创建完 Fixture 后，
 		// 清空 已经创建过的 Shape

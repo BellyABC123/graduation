@@ -10,6 +10,7 @@
 #include "PulleyScene.h"
 #include "GearScene.h"
 #include "OneSidedPlatformScene.h"
+#include "BuoyancyScene.h"
 
 using namespace CocosDenshion;
 
@@ -43,7 +44,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 	//CCScene* pScene = CutTheRopeScene::scene();
 	//CCScene* pScene = PulleyScene::scene();
 	//CCScene* pScene = GearScene::scene();
-	CCScene* pScene = OneSidedPlatformScene::scene();
+	//CCScene* pScene = OneSidedPlatformScene::scene();
+	CCScene* pScene = BuoyancyScene::scene();
 
     // run
     pDirector->runWithScene(pScene);

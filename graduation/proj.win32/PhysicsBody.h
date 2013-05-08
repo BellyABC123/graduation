@@ -41,6 +41,10 @@ public:
 	PhysicsBody* setPolygonShapeASBox(float hx, float hy);
 
 	// ²Ù×÷ Fixture
+private:
+	bool _setFixtureSensorFlag;
+public:
+	PhysicsBody* setFixtureSensor(bool sensor);
 	PhysicsBody* setFixtureDensity(float density);
 	PhysicsBody* setFixtureRestitution(float restitution);
 	PhysicsBody* setFixtureFriction(float friction);

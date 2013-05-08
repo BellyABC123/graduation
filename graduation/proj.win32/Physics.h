@@ -8,6 +8,8 @@
 
 using namespace cocos2d;
 
+class CustomContactListener;
+
 class Physics
 {
 private:
@@ -27,17 +29,12 @@ private:
 	int velocityIterations;
 	int positionIterations;
 
+	// Parameter For Creating Body
+	float density;
+
 public:
-	Physics():
-		meterPerPixel(0.1),
-		gravity(0,-9.8) ,
-		sleep(true),
-		updateTime(1.0 / 30),
-		stepTime(1.0 / 30),
-		velocityIterations(10),
-		positionIterations(10),
-		mouseJoint(NULL)
-	{}
+	Physics();
+
 
 	bool init();
 	static Physics* create();
@@ -54,6 +51,13 @@ public:
 	b2Body*		getBackgroundBody() { return backgroundBody;}
 
 	// Utilities
+
+	float	getDensity(){return density;}
+	void	setDensity(float density){ this->density = density; }
+
+
+
+
 	b2Body* createCircle(int x, int y, float radius, char* name);
 	b2Body* createStaticBrick(int x, int y, int width, int height, char* name, float angle = 0);
 	b2Body* createBrick(int x, int y, int width, int height,char* name, float angle = 0, int group = 0);
@@ -61,10 +65,11 @@ public:
 	void	createRope(b2Body* bodyA, b2Body* bodyB,int length);
 	void	createMouseJoint(b2MouseJointDef* jointDef){ mouseJoint = (b2MouseJoint*)world->CreateJoint(jointDef);}
 	b2Body*	createOneWayPlatform(int x, int y, int width, int height, char* name);
+	b2Body*	createWaterPool(int x, int y, int width, int height, char* name);
 
 private:
 
-	CustomContactListener customContactListener;
+	CustomContactListener* customContactListener;
 	// Utilites
 	float	getRectangleInRadian(b2Body* bodyA, b2Body* bodyB);
 };

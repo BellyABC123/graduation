@@ -6,12 +6,28 @@
 
 #include "PhysicsBody.h"
 
+Physics::Physics():
+	meterPerPixel(0.1),
+	gravity(0,-9.8) ,
+	sleep(true),
+	updateTime(1.0 / 30),
+	stepTime(1.0 / 30),
+	velocityIterations(10),
+	positionIterations(10),
+	mouseJoint(NULL)
+	//customContactListener(this)
+{
+	customContactListener = new CustomContactListener(this);
+
+	density = 1;
+}
+
 bool Physics::init()
 {
 	world = new b2World(gravity);
 	if(NULL == world)	return false;
 
-	world->SetContactListener(&customContactListener);
+	world->SetContactListener(customContactListener);
 	world->SetAllowSleeping(true);
 
 	b2BodyDef bodyDef;
@@ -75,7 +91,8 @@ Physics* Physics::create()
 void Physics::updateWorld()
 {
 	world->Step(stepTime,velocityIterations,positionIterations);
-	world->ClearForces();
+	customContactListener->applyBuoyancyEachStep();
+	//world->ClearForces();
 }
 
 void Physics::drawDebugData()
@@ -115,7 +132,7 @@ b2Body* Physics::createStaticBrick(int x, int y, int width, int height,char* nam
 	b2FixtureDef fixtureDef;
 	fixtureDef.shape = &polygonShape;
 
-	fixtureDef.density = 2;
+	fixtureDef.density = density;
 	fixtureDef.restitution = 0.4;
 	fixtureDef.friction = 0.5;
 
@@ -137,7 +154,7 @@ b2Body* Physics::createBrick(int x, int y, int width, int height,char* name, flo
 	b2FixtureDef fixtureDef;
 	fixtureDef.shape = &polygonShape;
 
-	fixtureDef.density = 1;
+	fixtureDef.density = density;
 	fixtureDef.restitution = 0.4;
 	fixtureDef.friction = 0.5;
 	fixtureDef.filter.groupIndex = group;
@@ -415,8 +432,22 @@ void Physics::createRope(b2Body* bodyA, b2Body* bodyB,int length)
 b2Body*	Physics::createOneWayPlatform(int x, int y, int width, int height, char* name)
 {
 	b2Body* body = createStaticBrick(x,y,width,height,name);
-	customContactListener.setOneSidedPlatformEanble();
-	customContactListener.addOneSidedPlatform(body);
+	customContactListener->setOneSidedPlatformEanble();
+	customContactListener->addOneSidedPlatform(body);
 	return NULL;
 }
 
+b2Body*	Physics::createWaterPool(int x, int y, int width, int height, char* name)
+{
+	PhysicsBody body(world);
+
+	customContactListener->setBuoyancyEnable(true);
+
+	return body.newBody()
+		->setBodyPosition(b2Vec2(x*getMeterPerPixel(),y*getMeterPerPixel()))
+		->setPolygonShapeASBox(width*getMeterPerPixel()/2, height*getMeterPerPixel()/2)
+		->setFixtureSensor(true)
+		->setFixtureDensity(2)
+		->createFixture()
+		->createBody();
+}
