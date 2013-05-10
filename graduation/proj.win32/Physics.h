@@ -5,10 +5,12 @@
 #include "Box2D/Box2D.h"
 #include "cocos2d.h"
 #include "CustomContactListener.h"
+#include "Automobile.h"
 
 using namespace cocos2d;
 
 class CustomContactListener;
+class Automobile;
 
 class Physics
 {
@@ -66,6 +68,7 @@ public:
 	void	createMouseJoint(b2MouseJointDef* jointDef){ mouseJoint = (b2MouseJoint*)world->CreateJoint(jointDef);}
 	b2Body*	createOneWayPlatform(int x, int y, int width, int height, char* name);
 	b2Body*	createWaterPool(int x, int y, int width, int height, char* name);
+	Automobile*	createAutomobile(int x, int y);
 
 private:
 

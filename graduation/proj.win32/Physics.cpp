@@ -366,19 +366,14 @@ void Physics::createRope(b2Body* bodyA, b2Body* bodyB,int length)
 		endBody = aboveBody;
 	}
 
-	//b2DistanceJointDef distanceJointDef;
-	b2RevoluteJointDef distanceJointDef;
-	distanceJointDef.collideConnected = false;
-	//distanceJointDef.length = 0.1 * meterPerPixel;
-	//distanceJointDef.frequencyHz = 0;
+	b2RevoluteJointDef revoluteJointDef;
+	revoluteJointDef.collideConnected = false;
 	b2Body* previousBody = startBody;
 
 	b2Vec2 startPoint = startBody->GetPosition();
 	b2Body* smallRect;
 	for(int i=0;i<needSmallRectNumber;i++)
 	{
-		//smallRect = createBrick(startPoint.x/meterPerPixel, startPoint.y/meterPerPixel, smallRectWidth/meterPerPixel, smallRectHeight/meterPerPixel, "rope", 0);
-
 		PhysicsBody physicsBody(world);
 		smallRect = physicsBody.newBody()
 												->setBodyPosition(b2Vec2(startPoint.x,startPoint.y))
@@ -390,18 +385,18 @@ void Physics::createRope(b2Body* bodyA, b2Body* bodyB,int length)
 												->createFixture()
 												->createBody();
 
-		distanceJointDef.bodyA = previousBody;
-		distanceJointDef.bodyB = smallRect;
+		revoluteJointDef.bodyA = previousBody;
+		revoluteJointDef.bodyB = smallRect;
 
 		if(previousBody == startBody)
-			distanceJointDef.localAnchorA = b2Vec2(0, 0);
+			revoluteJointDef.localAnchorA = b2Vec2(0, 0);
 		else
-			distanceJointDef.localAnchorA = b2Vec2(0, (-smallRectHeight/2 + anchorMargin));
+			revoluteJointDef.localAnchorA = b2Vec2(0, (-smallRectHeight/2 + anchorMargin));
 
-		distanceJointDef.localAnchorB = b2Vec2(0, (+smallRectHeight/2 - anchorMargin) );
-		world->CreateJoint(&distanceJointDef);
+		revoluteJointDef.localAnchorB = b2Vec2(0, (+smallRectHeight/2 - anchorMargin) );
+		world->CreateJoint(&revoluteJointDef);
 
-		previousBody = distanceJointDef.bodyB;
+		previousBody = revoluteJointDef.bodyB;
 
 		if(dx > dy)
 		{
@@ -414,9 +409,9 @@ void Physics::createRope(b2Body* bodyA, b2Body* bodyB,int length)
 		}
 	} // end for
 
-	distanceJointDef.bodyA = previousBody;
-	distanceJointDef.bodyB = bodyB;
-	world->CreateJoint(&distanceJointDef);
+	revoluteJointDef.bodyA = previousBody;
+	revoluteJointDef.bodyB = bodyB;
+	world->CreateJoint(&revoluteJointDef);
 
 
 	b2RopeJointDef ropeJointDef;
@@ -424,7 +419,6 @@ void Physics::createRope(b2Body* bodyA, b2Body* bodyB,int length)
 	ropeJointDef.bodyA = bodyA;
 	ropeJointDef.bodyB = bodyB;
 	ropeJointDef.maxLength = length * meterPerPixel;
-	//ropeJointDef.maxLength = (baryCenterA - baryCenterB).Length();
 	cout<<"Rope Length: "<<ropeJointDef.maxLength<<endl;
 	world->CreateJoint(&ropeJointDef);
 }
@@ -450,4 +444,9 @@ b2Body*	Physics::createWaterPool(int x, int y, int width, int height, char* name
 		->setFixtureDensity(2)
 		->createFixture()
 		->createBody();
+}
+
+Automobile* Physics::createAutomobile(int x, int y)
+{
+	return new Automobile(this,x,y);
 }
