@@ -8,6 +8,8 @@
 		bodyDef	= NULL;
 		body			= NULL;
 
+		bodyUserData = NULL;
+
 		fixtureDef = NULL;
 
 		chainShape		= NULL;
@@ -55,6 +57,17 @@
 		}
 	}
 
+	void PhysicsBody::resetBodyUserData()
+	{
+
+		if(NULL != bodyUserData)
+		{
+
+			delete bodyUserData;
+			bodyUserData = NULL;
+		}
+	}
+
 	void PhysicsBody::resetFixture()
 	{
 		if(NULL != fixtureDef)
@@ -84,6 +97,7 @@
 		resetBody();
 		resetFixture();
 		resetAllShape();
+		resetBodyUserData();
 
 		return this;
 	}
@@ -117,16 +131,28 @@
 	// polygonShape
 	PhysicsBody* PhysicsBody::setPolygonShapeASBox(float hx, float hy)
 	{
+		resetAllShape();
+
 		if(NULL == polygonShape)
-			polygonShape = new b2PolygonShape;
+			polygonShape = new b2PolygonShape();
 
 		polygonShape->SetAsBox(hx, hy);
 		return this;
 	}
+	// circleShape
+	PhysicsBody* PhysicsBody::setCircleShape(float radius)
+	{
+		resetAllShape();
+
+		if(NULL == circleShape)
+			circleShape = new b2CircleShape();
+
+		circleShape->m_radius = radius;
+
+		return this;
+	}
 
 	// ²Ù×÷ Fixture
-
-	
 	PhysicsBody* PhysicsBody::setFixtureSensor(bool sensor)
 	{
 		_setFixtureSensorFlag = true;
@@ -169,7 +195,6 @@
 
 		return this;
 	}
-
 	PhysicsBody* PhysicsBody::setFixtureCategoryBits(int categoryBits)
 	{
 		if(NULL == fixtureDef)
@@ -188,8 +213,6 @@
 
 		return this;
 	}
-
-
 
 	PhysicsBody* PhysicsBody::createFixture()
 	{
@@ -251,6 +274,11 @@
 
 	b2Body* PhysicsBody::createBody()
 	{
+		if(NULL == bodyUserData)
+			bodyUserData = new BodyUserData("null");
+
+		body->SetUserData(bodyUserData);
+
 		return body;
 	}
 
