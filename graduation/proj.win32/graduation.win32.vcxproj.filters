@@ -37,6 +37,9 @@
     <Filter Include="include\BuoyancyScene">
       <UniqueIdentifier>{f3a6f2cf-d9d8-44d2-8fe2-7398d73872df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\PhysicsWorld\ComplexBody">
+      <UniqueIdentifier>{a8f355f4-a10f-413b-b298-509e6bc65065}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\graduation.ico">
@@ -112,6 +115,9 @@
     <ClInclude Include="BuoyancyScene.h">
       <Filter>include\BuoyancyScene</Filter>
     </ClInclude>
+    <ClInclude Include="Automobile.h">
+      <Filter>include\PhysicsWorld\ComplexBody</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -164,6 +170,9 @@
     </ClCompile>
     <ClCompile Include="BuoyancyScene.cpp">
       <Filter>include\BuoyancyScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Automobile.cpp">
+      <Filter>include\PhysicsWorld\ComplexBody</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

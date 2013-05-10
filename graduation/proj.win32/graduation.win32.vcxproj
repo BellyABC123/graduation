@@ -131,6 +131,7 @@
     <ClInclude Include="..\Classes\GLES-Render.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="AngryBirdScene.h" />
+    <ClInclude Include="Automobile.h" />
     <ClInclude Include="AutomobileScene.h" />
     <ClInclude Include="BirdSprite.h" />
     <ClInclude Include="BodyUserData.h" />
@@ -151,6 +152,7 @@
     <ClCompile Include="..\Classes\GLES-Render.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="AngryBirdScene.cpp" />
+    <ClCompile Include="Automobile.cpp" />
     <ClCompile Include="AutomobileScene.cpp" />
     <ClCompile Include="BirdSprite.cpp" />
     <ClCompile Include="BodyUserData.cpp" />
