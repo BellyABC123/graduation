@@ -35,7 +35,7 @@ bool BuoyancyScene::init()
 		CC_BREAK_IF(! CCLayer::init());
 
 		// Initiate Physics
-		physics = Physics::create();
+		physics = PhysicsWorld::create();
 		if(NULL == physics) return false;
 
 		createMap();

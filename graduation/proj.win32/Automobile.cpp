@@ -2,7 +2,7 @@
 #include "Automobile.h"
 
 
-Automobile::Automobile(Physics* physics, float x, float y)
+Automobile::Automobile(PhysicsWorld* physics, float x, float y)
 {
 	this->physics = physics;
 

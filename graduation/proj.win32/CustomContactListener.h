@@ -5,7 +5,7 @@
 #ifndef __CUSTOM_CONTACT_LISTENER__
 #define __CUSTOM_CONTACT_LISTENER__
 
-#include "Physics.h"
+#include "PhysicsWorld.h"
 #include "Box2D/Box2D.h"
 #include <list>
 #include <set>
@@ -15,12 +15,12 @@
 
 using namespace std;
 
-class Physics;
+class PhysicsWorld;
 
 class CustomContactListener:public b2ContactListener
 {
 private:
-	Physics* physics;
+	PhysicsWorld* physics;
 
 	// OneSidedPlatform
 	bool _isOneSidePlatfomEanble;
@@ -32,7 +32,7 @@ private:
 	set<fixturePair> fixturePairs;
 
 public:
-	CustomContactListener(Physics* physics)
+	CustomContactListener(PhysicsWorld* physics)
 	{
 		this->physics = physics;
 		_isOneSidePlatfomEanble = false;

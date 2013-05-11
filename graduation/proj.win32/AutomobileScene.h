@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
-#include "Physics.h"
+#include "PhysicsWorld.h"
 
 using namespace cocos2d;
 
@@ -22,7 +22,7 @@ public:
 	virtual void ccTouchEnded (CCTouch *pTouch, CCEvent *pEvent);
 
 private:
-	Physics* physics;
+	PhysicsWorld* physics;
 	void draw();
 	void updateWorld(float deltaTime);
 

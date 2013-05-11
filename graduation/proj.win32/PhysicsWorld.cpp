@@ -1,12 +1,12 @@
 
-#include "Physics.h"
+#include "PhysicsWorld.h"
 #include "BodyUserData.h"
 #include "GLES-Render.h"
 #include "cocos2d.h"
 
 #include "PhysicsBody.h"
 
-Physics::Physics():
+PhysicsWorld::PhysicsWorld():
 	meterPerPixel(0.1),
 	gravity(0,-9.8) ,
 	sleep(true),
@@ -22,7 +22,7 @@ Physics::Physics():
 	density = 1;
 }
 
-bool Physics::init()
+bool PhysicsWorld::init()
 {
 	world = new b2World(gravity);
 	if(NULL == world)	return false;
@@ -75,9 +75,9 @@ bool Physics::init()
 	return true;
 }
 
-Physics* Physics::create()
+PhysicsWorld* PhysicsWorld::create()
 {
-	Physics* instance = new Physics();
+	PhysicsWorld* instance = new PhysicsWorld();
 	
 	if(instance && instance->init())
 	{
@@ -88,20 +88,20 @@ Physics* Physics::create()
 	return NULL;
 }
 
-void Physics::updateWorld()
+void PhysicsWorld::updateWorld()
 {
 	world->Step(stepTime,velocityIterations,positionIterations);
 	customContactListener->applyBuoyancyEachStep();
 	//world->ClearForces();
 }
 
-void Physics::drawDebugData()
+void PhysicsWorld::drawDebugData()
 {
 	world->DrawDebugData();
 }
 
 // Utilities
-b2Body* Physics::createCircle(int x, int y, float radius, char* name)
+b2Body* PhysicsWorld::createCircle(int x, int y, float radius, char* name)
 {	
 	b2BodyDef bodyDefinition;
 	b2CircleShape circleShape;
@@ -125,7 +125,7 @@ b2Body* Physics::createCircle(int x, int y, float radius, char* name)
 	body->CreateFixture(&fixtureDefinition);
 	return body;
 }
-b2Body* Physics::createStaticBrick(int x, int y, int width, int height,char* name, float angle )
+b2Body* PhysicsWorld::createStaticBrick(int x, int y, int width, int height,char* name, float angle )
 {
 	b2BodyDef bodyDef;
 	b2PolygonShape polygonShape;
@@ -147,7 +147,7 @@ b2Body* Physics::createStaticBrick(int x, int y, int width, int height,char* nam
 	body->CreateFixture(&fixtureDef);
 	return body;
 }
-b2Body* Physics::createBrick(int x, int y, int width, int height,char* name, float angle, int group)
+b2Body* PhysicsWorld::createBrick(int x, int y, int width, int height,char* name, float angle, int group)
 {
 	b2BodyDef bodyDef;
 	b2PolygonShape polygonShape;
@@ -169,7 +169,7 @@ b2Body* Physics::createBrick(int x, int y, int width, int height,char* name, flo
 	body->CreateFixture(&fixtureDef);
 	return body;
 }
-b2Body* Physics::createIdol(int x, int y,char* name)
+b2Body* PhysicsWorld::createIdol(int x, int y,char* name)
 {
 	int width = 5 * meterPerPixel;
 	int height = 20 * meterPerPixel;
@@ -216,11 +216,11 @@ class GetClickFixtureCallback :public b2QueryCallback
 {
 private:
 	CCPoint	clickPoint;
-	Physics* physics;
+	PhysicsWorld* physics;
 
 
 public:
-	GetClickFixtureCallback(Physics* physics,CCPoint& clickPoint)
+	GetClickFixtureCallback(PhysicsWorld* physics,CCPoint& clickPoint)
 	{
 		this->physics = physics;
 		this->clickPoint = clickPoint;
@@ -249,7 +249,7 @@ public:
 	}
 };
 
-void Physics::touchBegin(CCTouch *pTouch, CCEvent *pEvent)
+void PhysicsWorld::touchBegin(CCTouch *pTouch, CCEvent *pEvent)
 {
 	CCPoint point = pTouch->getLocation();
 
@@ -261,7 +261,7 @@ void Physics::touchBegin(CCTouch *pTouch, CCEvent *pEvent)
 	world->QueryAABB(&getClickFixtureCallback,aabb);
 }
 
-void Physics::touchMoved(CCTouch *pTouch, CCEvent *pEvent)
+void PhysicsWorld::touchMoved(CCTouch *pTouch, CCEvent *pEvent)
 {
 	if(NULL != mouseJoint)
 	{
@@ -272,7 +272,7 @@ void Physics::touchMoved(CCTouch *pTouch, CCEvent *pEvent)
 											);
 	}
 }
-void Physics::touchEnded (CCTouch *pTouch, CCEvent *pEvent)
+void PhysicsWorld::touchEnded (CCTouch *pTouch, CCEvent *pEvent)
 {
 	if(NULL != mouseJoint)
 	{
@@ -281,7 +281,7 @@ void Physics::touchEnded (CCTouch *pTouch, CCEvent *pEvent)
 	}
 }
 
-float Physics::getRectangleInRadian(b2Body* bodyA, b2Body* bodyB)
+float PhysicsWorld::getRectangleInRadian(b2Body* bodyA, b2Body* bodyB)
 {
 	b2Body* leftBody;
 	b2Body* rightBody;
@@ -304,7 +304,7 @@ float Physics::getRectangleInRadian(b2Body* bodyA, b2Body* bodyB)
 }
 
 
-void Physics::createRope(b2Body* bodyA, b2Body* bodyB,int length)
+void PhysicsWorld::createRope(b2Body* bodyA, b2Body* bodyB,int length)
 {
 	// About The Small Rectangles
 	// Constructing A Rope
@@ -423,7 +423,7 @@ void Physics::createRope(b2Body* bodyA, b2Body* bodyB,int length)
 	world->CreateJoint(&ropeJointDef);
 }
 
-b2Body*	Physics::createOneWayPlatform(int x, int y, int width, int height, char* name)
+b2Body*	PhysicsWorld::createOneWayPlatform(int x, int y, int width, int height, char* name)
 {
 	b2Body* body = createStaticBrick(x,y,width,height,name);
 	customContactListener->setOneSidedPlatformEanble();
@@ -431,7 +431,7 @@ b2Body*	Physics::createOneWayPlatform(int x, int y, int width, int height, char*
 	return NULL;
 }
 
-b2Body*	Physics::createWaterPool(int x, int y, int width, int height, char* name)
+b2Body*	PhysicsWorld::createWaterPool(int x, int y, int width, int height, char* name)
 {
 	PhysicsBody body(world);
 
@@ -446,7 +446,7 @@ b2Body*	Physics::createWaterPool(int x, int y, int width, int height, char* name
 		->createBody();
 }
 
-Automobile* Physics::createAutomobile(int x, int y)
+Automobile* PhysicsWorld::createAutomobile(int x, int y)
 {
 	return new Automobile(this,x,y);
 }

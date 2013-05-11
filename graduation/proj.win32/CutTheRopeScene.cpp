@@ -33,7 +33,7 @@ bool CutTheRopeScene::init()
 		CC_BREAK_IF(! CCLayer::init());
 
 		// Initiate Physics
-		physics = Physics::create();
+		physics = PhysicsWorld::create();
 		if(NULL == physics) return false;
 
 		b2Body* brick1 = physics->createBrick(100,100,100,100,"brick1");

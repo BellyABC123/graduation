@@ -12,7 +12,7 @@ using namespace cocos2d;
 class CustomContactListener;
 class Automobile;
 
-class Physics
+class PhysicsWorld
 {
 private:
 
@@ -35,11 +35,11 @@ private:
 	float density;
 
 public:
-	Physics();
+	PhysicsWorld();
 
 
 	bool init();
-	static Physics* create();
+	static PhysicsWorld* create();
 	void updateWorld();
 	void drawDebugData();
 

@@ -6,20 +6,20 @@
 #include "Box2D/Box2D.h"
 #include "PhysicsBody.h"
 
-#include "Physics.h"
+#include "PhysicsWorld.h"
 
-class Physics;
+class PhysicsWorld;
 
 class Automobile
 {
 private:
-	Physics* physics;
+	PhysicsWorld* physics;
 	float motorSpeed;	// radian per second
 	float maxMotorTorque;
 	b2RevoluteJoint* revoluteJoints[2];
 
 public:
-	Automobile(Physics* physics, float x, float y);
+	Automobile(PhysicsWorld* physics, float x, float y);
 	void createAutomobile(float x, float y);
 
 	void forward();
