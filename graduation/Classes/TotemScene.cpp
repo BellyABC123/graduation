@@ -1,20 +1,22 @@
-#include "HelloWorldScene.h"
+#include "TotemScene.h"
 #include "GLES-Render.h"
 #include "BodyUserData.h"
 
+#include "ReturnMainMenuScene.h"
+
 using namespace cocos2d;
 
-CCScene* HelloWorld::scene()
+CCScene* TotemScene::scene()
 {
     CCScene * scene = NULL;
     do 
     {
         // 'scene' is an autorelease object
-        scene = CCScene::create();
+        scene = ReturnMainMenuScene::create();
         CC_BREAK_IF(! scene);
 
         // 'layer' is an autorelease object
-        HelloWorld *layer = HelloWorld::create();
+        TotemScene *layer = TotemScene::create();
         CC_BREAK_IF(! layer);
 
         // add layer as a child to scene
@@ -26,7 +28,7 @@ CCScene* HelloWorld::scene()
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
+bool TotemScene::init()
 {
     bool bRet = false;
     do 
@@ -58,13 +60,13 @@ bool HelloWorld::init()
     return bRet;
 }
 
-void HelloWorld::menuCloseCallback(CCObject* pSender)
+void TotemScene::menuCloseCallback(CCObject* pSender)
 {
     // "close" menu item clicked
     CCDirector::sharedDirector()->end();
 }
 
-HelloWorld::HelloWorld():gravity(0,-19.18) ,
+TotemScene::TotemScene():gravity(0,-19.18) ,
 										sleep(true),
 										stepTime(1.0 / 30),
 										velocityIterations(10),
@@ -73,10 +75,10 @@ HelloWorld::HelloWorld():gravity(0,-19.18) ,
 {
 }
 
-void HelloWorld::initBox2D()
+void TotemScene::initBox2D()
 {
 	world = new b2World(gravity);
-	schedule(schedule_selector(HelloWorld::updateWorld), 1.0 / 60);
+	schedule(schedule_selector(TotemScene::updateWorld), 1.0 / 60);
 
 	// Create Body
 	createStaticBrick(400,-1,800,6,"platform");
@@ -88,7 +90,7 @@ void HelloWorld::initBox2D()
 	draw->SetFlags(b2Draw::e_shapeBit);  
 }
 
-void HelloWorld::updateWorld(float deltaTime)
+void TotemScene::updateWorld(float deltaTime)
 {
 	//cout<<"update world"<<endl;
 	world->Step(stepTime,velocityIterations,positionIterations);
@@ -96,7 +98,7 @@ void HelloWorld::updateWorld(float deltaTime)
 	draw();
 }
 
-void HelloWorld::draw()
+void TotemScene::draw()
 {
 	CCLayer::draw();
 	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
@@ -106,7 +108,7 @@ void HelloWorld::draw()
 	CHECK_GL_ERROR_DEBUG();
 }
 
-b2Body* HelloWorld::createCircle(int x, int y, float radius, char* name)
+b2Body* TotemScene::createCircle(int x, int y, float radius, char* name)
 {	
 	b2BodyDef bodyDefinition;
 	b2CircleShape circleShape;
@@ -130,7 +132,7 @@ b2Body* HelloWorld::createCircle(int x, int y, float radius, char* name)
 	return body;
 }
 
-b2Body* HelloWorld::createStaticBrick(int x, int y, int width, int height,char* name)
+b2Body* TotemScene::createStaticBrick(int x, int y, int width, int height,char* name)
 {
 	b2BodyDef bodyDef;
 	b2PolygonShape polygonShape;
@@ -151,7 +153,7 @@ b2Body* HelloWorld::createStaticBrick(int x, int y, int width, int height,char* 
 	return body;
 }
 
-b2Body* HelloWorld::createBrick(int x, int y, int width, int height,char* name)
+b2Body* TotemScene::createBrick(int x, int y, int width, int height,char* name)
 {
 	b2BodyDef bodyDef;
 	b2PolygonShape polygonShape;
@@ -173,7 +175,7 @@ b2Body* HelloWorld::createBrick(int x, int y, int width, int height,char* name)
 	return body;
 }
 
-b2Body* HelloWorld::createIdol(int x, int y,char* name)
+b2Body* TotemScene::createIdol(int x, int y,char* name)
 {
 	int width = 5;
 	int height = 20;
@@ -217,27 +219,27 @@ b2Body* HelloWorld::createIdol(int x, int y,char* name)
 }
 
 
-void HelloWorld::onEnter()
+void TotemScene::onEnter()
 {
 	CCLayer::onEnter();
 	CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this,0,true);
 }
 
-void HelloWorld::onExit()
+void TotemScene::onExit()
 {
 	CCLayer::onExit();
 	CCDirector::sharedDirector()->getTouchDispatcher()->removeDelegate(this);
 }
 
-void 	HelloWorld::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
+void 	TotemScene::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 {
 }
 
-void 	HelloWorld::ccTouchEnded (CCTouch *pTouch, CCEvent *pEvent)
+void 	TotemScene::ccTouchEnded (CCTouch *pTouch, CCEvent *pEvent)
 {
 }
 
-void 	HelloWorld::ccTouchCancelled (CCTouch *pTouch, CCEvent *pEvent)
+void 	TotemScene::ccTouchCancelled (CCTouch *pTouch, CCEvent *pEvent)
 {
 }
 
@@ -258,7 +260,7 @@ public:
 	}
 };
 
-bool HelloWorld::ccTouchBegan(CCTouch* pTouch ,CCEvent* pEvent)
+bool TotemScene::ccTouchBegan(CCTouch* pTouch ,CCEvent* pEvent)
 {
 	CCPoint point = pTouch->getLocation();
 	cout<<"x:"<<point.x<<"\t"<<"y£º"<<point.y<<endl;
@@ -272,9 +274,3 @@ bool HelloWorld::ccTouchBegan(CCTouch* pTouch ,CCEvent* pEvent)
 	world->QueryAABB(&clickCallBack,aabb);
 	return true;
 }
-
-
-
-
-
-
