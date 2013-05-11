@@ -10,7 +10,7 @@
 
 using namespace  cocos2d;
 
-class AngryBirdScene : public cocos2d::CCLayer
+class AngryBirdScene : public CCLayer
 {
 public:
 	AngryBirdScene():
