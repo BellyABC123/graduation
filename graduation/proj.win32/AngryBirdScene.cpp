@@ -2,6 +2,8 @@
 #include "GLES-Render.h"
 #include "BodyUserData.h"
 
+#include "ReturnMainMenuScene.h"
+
 using namespace cocos2d;
 
 CCScene* AngryBirdScene::scene()
@@ -10,7 +12,7 @@ CCScene* AngryBirdScene::scene()
 	do 
 	{
 		// 'scene' is an autorelease object
-		scene = CCScene::create();
+		scene = ReturnMainMenuScene::create();
 		CC_BREAK_IF(! scene);
 
 		// 'layer' is an autorelease object
@@ -50,6 +52,8 @@ bool AngryBirdScene::init()
 
 	return bRet;
 }
+
+
 
 void AngryBirdScene::menuCloseCallback(CCObject* pSender)
 {

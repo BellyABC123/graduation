@@ -1,5 +1,6 @@
 
 #include "BuoyancyScene.h"
+#include "ReturnMainMenuScene.h"
 
 
 CCScene* BuoyancyScene::scene()
@@ -8,7 +9,7 @@ CCScene* BuoyancyScene::scene()
 	do 
 	{
 		// 'scene' is an autorelease object
-		scene = CCScene::create();
+		scene = ReturnMainMenuScene::create();
 		CC_BREAK_IF(! scene);
 
 		// 'layer' is an autorelease object

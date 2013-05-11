@@ -1,5 +1,6 @@
 
 #include "GearScene.h"
+#include "ReturnMainMenuScene.h"
 
 
 CCScene* GearScene::scene()
@@ -8,7 +9,7 @@ CCScene* GearScene::scene()
 	do 
 	{
 		// 'scene' is an autorelease object
-		scene = CCScene::create();
+		scene = ReturnMainMenuScene::create();
 		CC_BREAK_IF(! scene);
 
 		// 'layer' is an autorelease object

@@ -3,10 +3,11 @@
 #include "AppDelegate.h"
 #include "SimpleAudioEngine.h"
 
-#include "HelloWorldScene.h"
+#include "MainMenuScene.h"
+#include "TotemScene.h"
 #include "AngryBirdScene.h"
 #include "AutomobileScene.h"
-#include "CutTheRope.h"
+#include "CutTheRopeScene.h"
 #include "PulleyScene.h"
 #include "GearScene.h"
 #include "OneSidedPlatformScene.h"
@@ -37,18 +38,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
 
-    // create a scene. it's an autorelease object
-    //CCScene *pScene = HelloWorld::scene();
-	//CCScene* pScene = AngryBirdScene::scene();
-	CCScene* pScene = AutomobileScene::scene();
-	//CCScene* pScene = CutTheRopeScene::scene();
-	//CCScene* pScene = PulleyScene::scene();
-	//CCScene* pScene = GearScene::scene();
-	//CCScene* pScene = OneSidedPlatformScene::scene();
-	//CCScene* pScene = BuoyancyScene::scene();
-
-    // run
+	// Run The Menu Scene
+	CCScene* pScene = MainMenuScene::scene();
     pDirector->runWithScene(pScene);
+
     return true;
 }
 

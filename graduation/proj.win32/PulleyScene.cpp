@@ -1,5 +1,6 @@
 
 #include "PulleyScene.h"
+#include "ReturnMainMenuScene.h"
 
 
 CCScene* PulleyScene::scene()
@@ -8,7 +9,7 @@ CCScene* PulleyScene::scene()
 	do 
 	{
 		// 'scene' is an autorelease object
-		scene = CCScene::create();
+		scene = ReturnMainMenuScene::create();
 		CC_BREAK_IF(! scene);
 
 		// 'layer' is an autorelease object
