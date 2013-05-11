@@ -1,5 +1,6 @@
 
-#include "CutTheRope.h"
+#include "CutTheRopeScene.h"
+#include "ReturnMainMenuScene.h"
 
 
 CCScene* CutTheRopeScene::scene()
@@ -8,7 +9,7 @@ CCScene* CutTheRopeScene::scene()
 	do 
 	{
 		// 'scene' is an autorelease object
-		scene = CCScene::create();
+		scene = ReturnMainMenuScene::create();
 		CC_BREAK_IF(! scene);
 
 		// 'layer' is an autorelease object
