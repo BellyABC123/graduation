@@ -98,6 +98,7 @@ b2Body* PhysicsWorld::createCircle(int x, int y, float radius, char* name)
 	body->CreateFixture(&fixtureDefinition);
 	return body;
 }
+
 b2Body* PhysicsWorld::createStaticBrick(int x, int y, int width, int height,char* name, float angle )
 {
 	b2BodyDef bodyDef;
@@ -120,6 +121,7 @@ b2Body* PhysicsWorld::createStaticBrick(int x, int y, int width, int height,char
 	body->CreateFixture(&fixtureDef);
 	return body;
 }
+
 b2Body* PhysicsWorld::createBrick(int x, int y, int width, int height,char* name, float angle, int group)
 {
 	b2BodyDef bodyDef;
@@ -142,10 +144,11 @@ b2Body* PhysicsWorld::createBrick(int x, int y, int width, int height,char* name
 	body->CreateFixture(&fixtureDef);
 	return body;
 }
+
 b2Body* PhysicsWorld::createIdol(int x, int y,char* name)
 {
-	int width = 5 * meterPerPixel;
-	int height = 20 * meterPerPixel;
+	float width = 5 * meterPerPixel;
+	float height = 20 * meterPerPixel;
 	b2Vec2 center1(0,-height);
 	float angle = 3.14 / 4;
 
@@ -165,7 +168,6 @@ b2Body* PhysicsWorld::createIdol(int x, int y,char* name)
 	fixtureDef.friction = 0.5;
 
 	polygonShape.SetAsBox(width, height);
-
 	body->CreateFixture(&fixtureDef);
 
 	polygonShape.SetAsBox(width, height, center1, -angle);
@@ -175,10 +177,10 @@ b2Body* PhysicsWorld::createIdol(int x, int y,char* name)
 	body->CreateFixture(&fixtureDef);
 
 	b2Vec2 vector[4];
-	vector[0].Set(0 * meterPerPixel,10 * meterPerPixel);
-	vector[1].Set(15 * meterPerPixel,25 * meterPerPixel);
-	vector[2].Set(0 * meterPerPixel,40 * meterPerPixel);
-	vector[3].Set(-15 * meterPerPixel,25 * meterPerPixel);
+	vector[0].Set(0*meterPerPixel,10*meterPerPixel);
+	vector[1].Set(15*meterPerPixel,25*meterPerPixel);
+	vector[2].Set(0*meterPerPixel,40*meterPerPixel);
+	vector[3].Set(-15*meterPerPixel,25*meterPerPixel);
 	polygonShape.Set(vector,4);
 	body->CreateFixture(&fixtureDef);
 
