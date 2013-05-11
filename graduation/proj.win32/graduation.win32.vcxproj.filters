@@ -1,44 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="source">
-      <UniqueIdentifier>{a56a99a1-5445-48b8-beb2-155a7aaff424}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
-    </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{3b1688fe-2a76-4013-8ffe-67cc1a87a0ad}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
-    </Filter>
     <Filter Include="resource">
       <UniqueIdentifier>{be876912-a107-463c-82cc-e2892255888c}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
     </Filter>
-    <Filter Include="include\AngryBird">
+    <Filter Include="Classes">
+      <UniqueIdentifier>{3b1688fe-2a76-4013-8ffe-67cc1a87a0ad}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Classes\AngryBird">
       <UniqueIdentifier>{3fff4b43-bf8e-4e8c-87a1-881f67883122}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Automobile">
+    <Filter Include="Classes\Automobile">
       <UniqueIdentifier>{913c76e7-abee-417b-b18f-45403538dd53}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\CutTheRope">
-      <UniqueIdentifier>{79dde217-fbb4-4289-b13c-eeff533c5744}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\PhysicsWorld">
+    <Filter Include="Classes\PhysicsWorld">
       <UniqueIdentifier>{59a5d2d6-b9f2-4b43-ab31-ee611a947d7a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\PulleyJoint">
-      <UniqueIdentifier>{b03d004a-f446-4f38-9ac4-5168289da338}</UniqueIdentifier>
+    <Filter Include="Classes\PhysicsWorld\ComplexBody">
+      <UniqueIdentifier>{a8f355f4-a10f-413b-b298-509e6bc65065}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\GearJointScene">
+    <Filter Include="Classes\GearJointScene">
       <UniqueIdentifier>{37d3736f-672a-4c12-881f-f05290a6bccd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\OneSidedPlatform">
-      <UniqueIdentifier>{8481b28d-9ec4-4cc3-8e7f-4cea99c940f9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\BuoyancyScene">
+    <Filter Include="Classes\BuoyancyScene">
       <UniqueIdentifier>{f3a6f2cf-d9d8-44d2-8fe2-7398d73872df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\PhysicsWorld\ComplexBody">
-      <UniqueIdentifier>{a8f355f4-a10f-413b-b298-509e6bc65065}</UniqueIdentifier>
+    <Filter Include="Win32">
+      <UniqueIdentifier>{a56a99a1-5445-48b8-beb2-155a7aaff424}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Classes\OneSidedPlatformScene">
+      <UniqueIdentifier>{8481b28d-9ec4-4cc3-8e7f-4cea99c940f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\PulleyJointScene">
+      <UniqueIdentifier>{b03d004a-f446-4f38-9ac4-5168289da338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CutTheRopeScene">
+      <UniqueIdentifier>{79dde217-fbb4-4289-b13c-eeff533c5744}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\TotemScene">
+      <UniqueIdentifier>{172c4dae-3152-497c-b584-e6b1d0d6db7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ReturnMainMenuScene">
+      <UniqueIdentifier>{8e7a1635-51b4-48ee-ac46-1bfe154b350f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\MainMenuScene">
+      <UniqueIdentifier>{545ef14a-aa47-4d5a-81c9-d02b21c32f84}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -61,118 +70,130 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GLES-Render.h">
-      <Filter>include</Filter>
+      <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="AngryBirdScene.h">
-      <Filter>include\AngryBird</Filter>
+      <Filter>Classes\AngryBird</Filter>
     </ClInclude>
     <ClInclude Include="BirdSprite.h">
-      <Filter>include\AngryBird</Filter>
+      <Filter>Classes\AngryBird</Filter>
     </ClInclude>
     <ClInclude Include="SlingSprite.h">
-      <Filter>include\AngryBird</Filter>
+      <Filter>Classes\AngryBird</Filter>
     </ClInclude>
     <ClInclude Include="AutomobileScene.h">
-      <Filter>include\Automobile</Filter>
-    </ClInclude>
-    <ClInclude Include="CutTheRope.h">
-      <Filter>include\CutTheRope</Filter>
+      <Filter>Classes\Automobile</Filter>
     </ClInclude>
     <ClInclude Include="BodyUserData.h">
-      <Filter>include\PhysicsWorld</Filter>
+      <Filter>Classes\PhysicsWorld</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsBody.h">
-      <Filter>include\PhysicsWorld</Filter>
+      <Filter>Classes\PhysicsWorld</Filter>
     </ClInclude>
     <ClInclude Include="Physics.h">
-      <Filter>include\PhysicsWorld</Filter>
+      <Filter>Classes\PhysicsWorld</Filter>
     </ClInclude>
     <ClInclude Include="PulleyScene.h">
-      <Filter>include\PulleyJoint</Filter>
+      <Filter>Classes\PulleyJointScene</Filter>
     </ClInclude>
     <ClInclude Include="GearScene.h">
-      <Filter>include\GearJointScene</Filter>
+      <Filter>Classes\GearJointScene</Filter>
     </ClInclude>
     <ClInclude Include="CustomContactListener.h">
-      <Filter>include\PhysicsWorld</Filter>
+      <Filter>Classes\PhysicsWorld</Filter>
     </ClInclude>
     <ClInclude Include="OneSidedPlatformScene.h">
-      <Filter>include\OneSidedPlatform</Filter>
+      <Filter>Classes\OneSidedPlatformScene</Filter>
     </ClInclude>
     <ClInclude Include="BuoyancyScene.h">
-      <Filter>include\BuoyancyScene</Filter>
+      <Filter>Classes\BuoyancyScene</Filter>
     </ClInclude>
     <ClInclude Include="Automobile.h">
-      <Filter>include\PhysicsWorld\ComplexBody</Filter>
+      <Filter>Classes\PhysicsWorld\ComplexBody</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GLES-Render.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CutTheRopeScene.h">
+      <Filter>Classes\CutTheRopeScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TotemScene.h">
+      <Filter>Classes\TotemScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ReturnMainMenuScene.h">
+      <Filter>Classes\ReturnMainMenuScene</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuScene.h">
+      <Filter>Classes\MainMenuScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GLES-Render.cpp">
-      <Filter>source</Filter>
+      <Filter>Win32</Filter>
     </ClCompile>
     <ClCompile Include="GearScene.cpp">
-      <Filter>include\GearJointScene</Filter>
+      <Filter>Classes\GearJointScene</Filter>
     </ClCompile>
     <ClCompile Include="AutomobileScene.cpp">
-      <Filter>include\Automobile</Filter>
+      <Filter>Classes\Automobile</Filter>
     </ClCompile>
     <ClCompile Include="PulleyScene.cpp">
-      <Filter>include\PulleyJoint</Filter>
+      <Filter>Classes\PulleyJointScene</Filter>
     </ClCompile>
     <ClCompile Include="BodyUserData.cpp">
-      <Filter>include\PhysicsWorld</Filter>
+      <Filter>Classes\PhysicsWorld</Filter>
     </ClCompile>
     <ClCompile Include="Physics.cpp">
-      <Filter>include\PhysicsWorld</Filter>
+      <Filter>Classes\PhysicsWorld</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsBody.cpp">
-      <Filter>include\PhysicsWorld</Filter>
-    </ClCompile>
-    <ClCompile Include="CutTheRope.cpp">
-      <Filter>include\CutTheRope</Filter>
+      <Filter>Classes\PhysicsWorld</Filter>
     </ClCompile>
     <ClCompile Include="AngryBirdScene.cpp">
-      <Filter>include\AngryBird</Filter>
+      <Filter>Classes\AngryBird</Filter>
     </ClCompile>
     <ClCompile Include="BirdSprite.cpp">
-      <Filter>include\AngryBird</Filter>
+      <Filter>Classes\AngryBird</Filter>
     </ClCompile>
     <ClCompile Include="SlingSprite.cpp">
-      <Filter>include\AngryBird</Filter>
+      <Filter>Classes\AngryBird</Filter>
     </ClCompile>
     <ClCompile Include="CustomeContactListener.cpp">
-      <Filter>include\PhysicsWorld</Filter>
+      <Filter>Classes\PhysicsWorld</Filter>
     </ClCompile>
     <ClCompile Include="OneSidedPlatformScene.cpp">
-      <Filter>include\OneSidedPlatform</Filter>
+      <Filter>Classes\OneSidedPlatformScene</Filter>
     </ClCompile>
     <ClCompile Include="BuoyancyScene.cpp">
-      <Filter>include\BuoyancyScene</Filter>
+      <Filter>Classes\BuoyancyScene</Filter>
     </ClCompile>
     <ClCompile Include="Automobile.cpp">
-      <Filter>include\PhysicsWorld\ComplexBody</Filter>
+      <Filter>Classes\PhysicsWorld\ComplexBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GLES-Render.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="CutTheRopeScene.cpp">
+      <Filter>Classes\CutTheRopeScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TotemScene.cpp">
+      <Filter>Classes\TotemScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ReturnMainMenuScene.cpp">
+      <Filter>Classes\ReturnMainMenuScene</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuScene.cpp">
+      <Filter>Classes\MainMenuScene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

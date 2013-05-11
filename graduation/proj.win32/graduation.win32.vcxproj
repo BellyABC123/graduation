@@ -129,17 +129,19 @@
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\GLES-Render.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\TotemScene.h" />
     <ClInclude Include="AngryBirdScene.h" />
     <ClInclude Include="Automobile.h" />
     <ClInclude Include="AutomobileScene.h" />
+    <ClInclude Include="ReturnMainMenuScene.h" />
     <ClInclude Include="BirdSprite.h" />
     <ClInclude Include="BodyUserData.h" />
     <ClInclude Include="BuoyancyScene.h" />
     <ClInclude Include="CustomContactListener.h" />
-    <ClInclude Include="CutTheRope.h" />
+    <ClInclude Include="CutTheRopeScene.h" />
     <ClInclude Include="GearScene.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="MainMenuScene.h" />
     <ClInclude Include="OneSidedPlatformScene.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="PhysicsBody.h" />
@@ -150,17 +152,19 @@
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\GLES-Render.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\TotemScene.cpp" />
     <ClCompile Include="AngryBirdScene.cpp" />
     <ClCompile Include="Automobile.cpp" />
     <ClCompile Include="AutomobileScene.cpp" />
+    <ClCompile Include="ReturnMainMenuScene.cpp" />
     <ClCompile Include="BirdSprite.cpp" />
     <ClCompile Include="BodyUserData.cpp" />
     <ClCompile Include="BuoyancyScene.cpp" />
     <ClCompile Include="CustomeContactListener.cpp" />
-    <ClCompile Include="CutTheRope.cpp" />
+    <ClCompile Include="CutTheRopeScene.cpp" />
     <ClCompile Include="GearScene.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuScene.cpp" />
     <ClCompile Include="OneSidedPlatformScene.cpp" />
     <ClCompile Include="Physics.cpp" />
     <ClCompile Include="PhysicsBody.cpp" />
