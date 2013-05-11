@@ -91,9 +91,6 @@
     <ClInclude Include="PhysicsBody.h">
       <Filter>Classes\PhysicsWorld</Filter>
     </ClInclude>
-    <ClInclude Include="Physics.h">
-      <Filter>Classes\PhysicsWorld</Filter>
-    </ClInclude>
     <ClInclude Include="PulleyScene.h">
       <Filter>Classes\PulleyJointScene</Filter>
     </ClInclude>
@@ -133,6 +130,9 @@
     <ClInclude Include="MainMenuScene.h">
       <Filter>Classes\MainMenuScene</Filter>
     </ClInclude>
+    <ClInclude Include="PhysicsWorld.h">
+      <Filter>Classes\PhysicsWorld</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -148,9 +148,6 @@
       <Filter>Classes\PulleyJointScene</Filter>
     </ClCompile>
     <ClCompile Include="BodyUserData.cpp">
-      <Filter>Classes\PhysicsWorld</Filter>
-    </ClCompile>
-    <ClCompile Include="Physics.cpp">
       <Filter>Classes\PhysicsWorld</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsBody.cpp">
@@ -194,6 +191,9 @@
     </ClCompile>
     <ClCompile Include="MainMenuScene.cpp">
       <Filter>Classes\MainMenuScene</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsWorld.cpp">
+      <Filter>Classes\PhysicsWorld</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

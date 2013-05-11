@@ -143,7 +143,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="MainMenuScene.h" />
     <ClInclude Include="OneSidedPlatformScene.h" />
-    <ClInclude Include="Physics.h" />
+    <ClInclude Include="PhysicsWorld.h" />
     <ClInclude Include="PhysicsBody.h" />
     <ClInclude Include="PulleyScene.h" />
     <ClInclude Include="resource.h" />
@@ -166,7 +166,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuScene.cpp" />
     <ClCompile Include="OneSidedPlatformScene.cpp" />
-    <ClCompile Include="Physics.cpp" />
+    <ClCompile Include="PhysicsWorld.cpp" />
     <ClCompile Include="PhysicsBody.cpp" />
     <ClCompile Include="PulleyScene.cpp" />
     <ClCompile Include="SlingSprite.cpp" />
