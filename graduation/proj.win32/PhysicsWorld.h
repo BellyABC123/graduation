@@ -49,6 +49,7 @@ public:
 
 	float		getMeterPerPixel(){ return meterPerPixel;}
 	float		getUpdateTime(){ return updateTime;}
+	float		getStepTime(){return stepTime;}
 	b2World*	getWorld(){ return world;}
 	b2Body*		getBackgroundBody() { return backgroundBody;}
 

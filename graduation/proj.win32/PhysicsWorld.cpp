@@ -36,35 +36,8 @@ bool PhysicsWorld::init()
 	// Static Platform
 	createStaticBrick(400,-1,800,6,"platform");
 
-
-	//PhysicsBody* physicsBody = new PhysicsBody(world);
-	//physicsBody
-	//					->setBodyPosition(b2Vec2(400 * meterPerPixel, 300 * meterPerPixel))
-	//					->setBodyType(b2BodyType::b2_dynamicBody)
-	//					->setPolygonShapeASBox(50*meterPerPixel, 50*meterPerPixel)
-	//					->setFixtureDensity(1)
-	//					->createFixture()
-	//					->setBodyPosition(b2Vec2(100*meterPerPixel, 100*meterPerPixel))
-	//					->setPolygonShapeASBox(50*meterPerPixel, 50*meterPerPixel)
-	//					->createFixture();
-
-
-	//b2DistanceJointDef distanceJointDef;
-	//distanceJointDef.bodyA = brick1;
-	//distanceJointDef.bodyB = brick2;
-	//distanceJointDef.collideConnected = true;
-	//b2Vec2 baryCenter = brick1->GetWorldCenter();
-	//distanceJointDef.localAnchorA = b2Vec2(25 * meterPerPixel,0);
-	//distanceJointDef.localAnchorB = b2Vec2(0,0);
-	//distanceJointDef.length = 110 * meterPerPixel;
-
-	//world->CreateJoint(&distanceJointDef);
-
-
-	//b2RevoluteJointDef revoluteJointDef;
-	//revoluteJointDef.Initialize(brick1, brick2 , brick1->GetWorldCenter());
-	//world->CreateJoint(&revoluteJointDef);
-
+	createStaticBrick(0,150,10,300,"wall");
+	createStaticBrick(800,150,10,300,"wall");
 
 	// Set Debug Draw
 	GLESDebugDraw* draw = new GLESDebugDraw(1.0 / meterPerPixel);
