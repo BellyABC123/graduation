@@ -51,9 +51,6 @@ bool AutomobileScene::init()
 
 void AutomobileScene::createMap()
 {
-	physics->createStaticBrick(0,150,10,300,"wall");
-	physics->createStaticBrick(800,150,10,300,"wall");
-
 	physics->createBrick(400,300,50,50,"brick");
 	physics->createBrick(400,300,25,25,"brick");
 	physics->createBrick(400,300,25,50,"brick");

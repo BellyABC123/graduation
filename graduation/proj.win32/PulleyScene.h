@@ -25,8 +25,6 @@ private:
 	PhysicsWorld* physics;
 	void draw();
 	void updateWorld(float deltaTime);
-
-private:
 	void createMap();
 };
 
